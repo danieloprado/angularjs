@@ -1,3 +1,8 @@
 body{
   padding: 50px;
 }
+
+.erro{
+  color: #d44950;
+  margin-top: 5px;
+}
