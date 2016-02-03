@@ -5,3 +5,9 @@ app.controller("appCtrl", function($scope) {
   $scope.date = new Date();
   $scope.cost = 5.6;
 });
+
+app.filter('dinheiro', function($filter) {
+  return function(valor) {
+    return $filter("currency")(valor, "R$ ").replace(".", ",");
+  };
+});
