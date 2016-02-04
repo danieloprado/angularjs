@@ -6,52 +6,20 @@
   <link href="css/style.css" rel="stylesheet" />
 </head>
 
-<body ng-controller="indexCtrl">
-  <h1>{{titulo}}</h1>
+<body>
 
-  <form name="formComida" ng-submit="adicionar(formComida)" novalidate>
-    <input type="text" ng-model="novaComida.nome" name="nome" placeholder="Comida" required />
-    <div class="erro" ng-show="(formComida.$submitted || formComida.nome.$touched) && formComida.nome.$error.required">
-      Esse campo e obrigatorio
-    </div>
+  <nav>
+    <ul>
+      <li>
+        <a href="#/">Home</a>
+      </li>
+      <li>
+        <a href="#/comida">Comida</a>
+      </li>
+    </ul>
+  </nav>
 
-    <input type="text" ng-model="novaComida.sabor" name="sabor" placeholder="Sabor" required />
-    <div class="erro" ng-show="(formComida.$submitted || formComida.sabor.$touched) && formComida.sabor.$error.required">
-      Esse campo e obrigatorio
-    </div>
-
-    <button>Adicionar</button>
-  </form>
-
-  <input type="text" ng-model="pesquisa" placeholder="Pesquisa" />
-
-  <br>
-  <br>
-
-  <table>
-    <thead>
-      <tr>
-        <th>Comida</th>
-        <th>Sabor</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in comida | filter:pesquisa">
-        <td>
-          {{item.nome}}
-        </td>
-        <td>
-          {{item.sabor}}
-        </td>
-        <td>
-          <button ng-click="remover($index, item)">
-            Remover
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <ng-view></ng-view>
 
   <script src="libs/angular/angular.min.js"></script>
   <script src="libs/angular/angular-route.min.js"></script>
