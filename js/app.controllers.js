@@ -1,20 +1,22 @@
-angular.module("app").controller("indexCtrl", function($scope, $http) {
+angular.module("app")
+
+.controller("homeCtrl", function($scope) {
+
+})
+
+.controller("comidaCtrl", function($scope) {
   $scope.titulo = "Meu App";
 
-  $http.get("https://sabesp-api.herokuapp.com/v2");
-
-  $scope.comida = [
-    {
-      nome: "pizza",
-      sabor: "mussarela"
-    }, {
-      nome: "lanche",
-      sabor: "x-bacon"
-    }, {
-      nome: "coxinha",
-      sabor: "flango com catupily"
-    }
-  ];
+  $scope.comida = [{
+    nome: "pizza",
+    sabor: "mussarela"
+  }, {
+    nome: "lanche",
+    sabor: "x-bacon"
+  }, {
+    nome: "coxinha",
+    sabor: "flango com catupily"
+  }];
 
   $scope.adicionar = function(formComida) {
     if (formComida.$valid === false) {
