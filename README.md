@@ -17,6 +17,6 @@ Aula 2
 * Injection
 * NgRoute
 * Service/Factory
-* $http Api: [sabesp-api](https://sabesp-api.herokuapp.com/v2/2015-01-01)
+* $http Api: [sabesp-api](https://sabesp-api.herokuapp.com/v2)
 * Promises
 * Directives
