@@ -4,6 +4,13 @@ angular.module("app")
 
 })
 
+.controller("sabespCtrl", function($scope, sabespApiV2) {
+  sabespApiV2.getInfo()
+    .then(function(response) {
+      $scope.data = response.data;
+    });
+})
+
 .controller("comidaCtrl", function($scope) {
   $scope.titulo = "Meu App";
 
